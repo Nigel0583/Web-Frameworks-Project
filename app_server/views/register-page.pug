@@ -10,19 +10,30 @@ block content
                 .wrap-login100
                     form.login100-form.validate-form
                         span.login100-form-title.p-b-26
-                            | Welcome
+                            | Sign up
                         span.login100-form-title.p-b-48
                             i.zmdi.zmdi-font
+                        .wrap-input100
+                            input.input100(type='text', name='user')
+                            span.focus-input100(data-placeholder='Username')
                         .wrap-input100.validate-input(data-validate='Valid email is: a@b.c')
                             input.input100(type='text', name='email')
                             span.focus-input100(data-placeholder='Email')
+                        .wrap-input100.validate-input(data-validate='Valid email is: a@b.c')
+                            input.input100(type='text', name='con-email')
+                            span.focus-input100(data-placeholder='Confirm Email')
                         .wrap-input100.validate-input(data-validate='Enter password')
                             span.btn-show-pass
                                 i.zmdi.zmdi-eye
                             input.input100(type='password', name='pass')
                             span.focus-input100(data-placeholder='Password')
+                        .wrap-input100.validate-input(data-validate='Enter password')
+                            span.btn-show-pass
+                                i.zmdi.zmdi-eye
+                            input.input100(type='password', name='con-pass')
+                            span.focus-input100(data-placeholder='Confirm Password')
                         .container-login100-form-btn
                             .wrap-login100-form-btn
                                 .login100-form-bgbtn
                                 button.login100-form-btn
-                                    | Register
+                                    | Sign up

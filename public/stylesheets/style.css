@@ -2,8 +2,6 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #ffffff;
-
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,23 +90,23 @@ legend {
 [ RESTYLE TAG ]*/
 
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body, html {
   height: 100%;
-  font-family: Poppins-Regular, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /*---------------------------------------------*/
 a {
-  font-family: Poppins-Regular;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
-  margin: 0px;
+  margin: 0;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -122,15 +120,15 @@ a:focus {
 a:hover {
   text-decoration: none;
   color: #6a7dfe;
-  color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
-  color: -o-linear-gradient(left, #21d4fd, #b721ff);
-  color: -moz-linear-gradient(left, #21d4fd, #b721ff);
-  color: linear-gradient(left, #21d4fd, #b721ff);
+  color: -webkit-linear-gradient(left, #312ffd, #b721ff);
+  color: -o-linear-gradient(left, #312ffd, #b721ff);
+  color: -moz-linear-gradient(left, #312ffd, #b721ff);
+  color: linear-gradient(left, #312ffd, #b721ff);
 }
 
 /*---------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
-  margin: 0px;
+  margin: 0;
 }
 
 p {
@@ -138,11 +136,11 @@ p {
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
-  margin: 0px;
+  margin: 0;
 }
 
 ul, li {
-  margin: 0px;
+  margin: 0;
   list-style-type: none;
 }
 
@@ -244,11 +242,11 @@ iframe {
   overflow: hidden;
   padding: 77px 55px 33px 55px;
 
-  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-  -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+
 }
 
 
@@ -337,7 +335,7 @@ iframe {
   width: 100%;
   position: absolute;
   top: 16px;
-  left: 0px;
+  left: 0;
   padding-left: 5px;
 
   -webkit-transition: all 0.4s;
@@ -501,7 +499,7 @@ iframe {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  right: 0px;
+  right: 0;
   pointer-events: none;
 
   font-family: 'Open Sans', sans-serif;
