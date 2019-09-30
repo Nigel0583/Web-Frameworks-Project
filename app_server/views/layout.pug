@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav.navbar.fixed-top.navbar-toggleable-md.navbar-inverse
+      .container
+        button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarMain')
+          span.navbar-toggler-icon
+        a.navbar-brand(href='/ ') F1
+        #navbarMain.navbar-collapse.collapse
+          a.nav-link(href='/ ') Home
+              a.nav-link(href='/about/') About
+              a.nav-link(href='/login/') Login
+              a.nav-link(href='/register/') Register
+    .container
+      block content
+      footer
+        .row
+          .col-12
+            small &copy; Nigel Guerin <script>document.write(new Date().getFullYear());</script>
+    script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')
+    script(src='/javascripts/bootstrap.min.js')
