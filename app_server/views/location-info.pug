@@ -15,16 +15,6 @@ block content
           p 125 High Street, Reading, RG6 1PS
           .card.card-primary
             .card-block
-              h2.card-title Opening hours
-              each time in location.openingTimes
-                p.card-text
-                  | #{time.days} : 
-                  if time.closed
-                    | closed
-                  else
-                    | #{time.opening} - #{time.closing}
-          .card.card-primary
-            .card-block
               h2.card-title Facilities
               each facility in location.facilities
                 span.badge.badge-warning
