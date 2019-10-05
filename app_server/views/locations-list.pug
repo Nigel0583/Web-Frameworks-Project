@@ -3,27 +3,31 @@ extends layout
 include _includes/sharedHTMLfunctions
 
 block content
-    .row.banner
-        .col-12
-            h1= pageHeader.title
-            small &nbsp;#{pageHeader.strapline}
-    .row
-        .col-12.col-md-8
+    .article-list(style='background-color: #0b0c10;')
+        .container
+            .intro
+                h2.text-center(style='color: rgb(255,255,255);') Latest Articles
+                p.text-center(style='color: rgb(255,255,255);') Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.
+            .row.articles
+                .col-sm-6.col-md-4.item
+                    a(href='#')
+                        img.img-fluid(src='assets/img/desk.jpg')
+                    h3.name(style='color: rgb(255,255,255);') Article Title
+                    p.description(style='color: #ffffff;') Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.
+                    a.action(href='#')
+                        i.fa.fa-arrow-circle-right(style='color: #66fcf1;')
+                .col-sm-6.col-md-4.item
+                    a(href='#')
+                        img.img-fluid(src='assets/img/building.jpg')
+                    h3.name(style='color: rgb(255,255,255);') Article Title
+                    p.description(style='color: #f9f9f9;') Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.
+                    a.action(href='#')
+                        i.fa.fa-arrow-circle-right(style='color: #66fcf1;')
+                .col-sm-6.col-md-4.item
+                    a(href='#')
+                        img.img-fluid(src='assets/img/loft.jpg')
+                    h3.name(style='color: rgb(255,255,255);') Article Title
+                    p.description(style='color: #ffffff;') Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.
+                    a.action(href='#')
+                        i.fa.fa-arrow-circle-right(style='color: #66fcf1;')
 
-        each circuit in circuits
-
-            .col-12.col-md-6.location-map
-                .card.card-primary
-                    .card-block
-                    h4
-                        a(href="/location")= circuit.circuitName
-                        small &nbsp;
-
-                        span.badge.badge-pill.badge-default.float-right= circuit.country
-                    p.address= circuit.locality
-                    .facilities
-                        each facility in circuit.facilities
-                            span.badge.badge-warning= facility
-
-    .col-12.col-md-4
-        p.lead= sidebar
