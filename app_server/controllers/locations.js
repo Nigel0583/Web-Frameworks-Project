@@ -10,22 +10,22 @@ const homelist = function(req, res){
     circuits: [{
       circuitName: 'Albert Park Grand Prix Circuit',
       locality: 'Melbourne',
-        facilities: '../img/Albert_Lake_Park_Street_Circuit_in_Melbourne,_Australia.svg',
+        facilities: '../img/Albert_Lake_Park_Street_Circuit_in_Melbourne__Australia.png',
       country: 'Australia'
     }, {
       circuitName: 'Red Bull Ring',
       locality: 'Spielberg',
-        facilities: '../img/1280px-Circuit_Red_Bull_Ring.svg',
+        facilities: '../img/1280px-Circuit_Red_Bull_Ring.png',
       country: 'Austria'
     }, {
       circuitName: 'Bahrain International Circuit',
       locality: 'Sakhir',
-      facilities: '../img/1280px-Bahrain_International_Circuit--Grand_Prix_Layout.svg',
+      facilities: '../img/1280px-Bahrain_International_Circuit-Grand_Prix_Layout.png',
       country: 'Bahrain'
     },{
       circuitName: 'Circuit de Spa-Francorchamps',
       locality: 'Stavelot',
-      facilities: '../img/1280px-Spa-Francorchamps_of_Belgium.svg',
+      facilities: '../img/1280px-Spa-Francorchamps_of_Belgium.png',
       country: 'Belgium'
     }]
   });
