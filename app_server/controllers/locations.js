@@ -1,32 +1,32 @@
 /* GET 'home' page */
 const homelist = function(req, res){
   res.render('locations-list', {
-    title: 'Title',
+    title: 'Top 10 Circuits',
     pageHeader: {
-      title: 'Title',
-      strapline: ''
+      title: 'Top 10 Circuits',
+      strapline: 'The top ten Formula one circuits from around the world'
     },
     sidebar: "Text here",
     circuits: [{
       circuitName: 'Albert Park Grand Prix Circuit',
       locality: 'Melbourne',
-        facilities: ['key'],
+        facilities: '../img/Albert_Lake_Park_Street_Circuit_in_Melbourne,_Australia.svg',
       country: 'Australia'
     }, {
-      circuitName: 'Bahrain International Circuit',
-      locality: 'Sakhir',
-        facilities: ['features'],
-      country: 'Bahrain'
+      circuitName: 'Red Bull Ring',
+      locality: 'Spielberg',
+        facilities: '../img/1280px-Circuit_Red_Bull_Ring.svg',
+      country: 'Austria'
     }, {
       circuitName: 'Bahrain International Circuit',
       locality: 'Sakhir',
-      facilities: ['features'],
+      facilities: '../img/1280px-Bahrain_International_Circuit--Grand_Prix_Layout.svg',
       country: 'Bahrain'
     },{
-      circuitName: 'Bahrain International Circuit',
-      locality: 'Sakhir',
-      facilities: ['features'],
-      country: 'Bahrain'
+      circuitName: 'Circuit de Spa-Francorchamps',
+      locality: 'Stavelot',
+      facilities: '../img/1280px-Spa-Francorchamps_of_Belgium.svg',
+      country: 'Belgium'
     }]
   });
 };
