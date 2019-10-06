@@ -3,3 +3,12 @@ html, body {
     height: 100%;
     background-color: #0b0c10;
 }
+.fixed_nav{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+.main {
+    margin-top: 50px;
+}

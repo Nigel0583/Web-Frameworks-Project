@@ -17,7 +17,7 @@ html
     link(rel='stylesheet', href='../stylesheets/registration-form.css')
     link(rel='stylesheet', href='../stylesheets/style.css')
   body(style='background-color: #0b0c10;')
-    nav.navbar.navbar-light.navbar-expand-md.navigation-clean-search(style='background-color: #1f2833;')
+    nav.navbar.navbar-light.navbar-expand-md.navigation-clean-search.fixed_nav(style='background-color: #1f2833;')
       .container
         a.navbar-brand(href='/ ', style='color: rgb(255,255,255);') Formula 1
         button.navbar-toggler(data-toggle='collapse', data-target='#navcol-1')
@@ -36,7 +36,7 @@ html
               input#search-field.form-control.search-field(type='search', name='search')
           a.btn.btn-light.action-button(role='button', href='/register/', style='background-color: rgba(255,255,255,0);') Register
           a.btn.btn-light.action-button(role='button', href='/login/', style='background-color: #45a29e;') Login
-
+    .main
     block content
     .footer-dark(style='background-color: #1f2833;')
       footer
