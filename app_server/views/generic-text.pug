@@ -1,9 +1,26 @@
 extends layout
 
 block content
-  .row.banner
-    .col-12
-      h1= title
-  .row
-    .col-12.col-lg-8
-      p !{(content).replace(/\n/g, '<br/>')}
+  .features-clean(style='background-color: #0b0c10;')
+    .container
+      .intro
+        h2.text-center(style='color: rgb(255,255,255);') Features
+        p.text-center(style='color: rgb(255,255,255);')
+          | Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.
+      .row.features
+        .col-sm-6.col-lg-4.item
+          i.fa.fa-map-marker.icon
+          h3.name(style='color: rgb(255,255,255);') Works everywhere
+          p.description(style='color: rgb(255,255,255);')
+            | Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.
+        .col-sm-6.col-lg-4.item
+          i.fa.fa-clock-o.icon
+          h3.name(style='color: rgb(255,255,255);') Always available
+          p.description(style='color: rgb(255,255,255);')
+            | Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.
+        .col-sm-6.col-lg-4.item
+          i.fa.fa-list-alt.icon
+          h3.name(style='color: rgb(255,255,255);') Customizable
+          p.description(style='color: rgb(255,255,255);')
+            | Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.
+

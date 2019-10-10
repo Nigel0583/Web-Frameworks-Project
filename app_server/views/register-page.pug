@@ -1,37 +1,24 @@
 extends layout
 
 block content
-
-    .row
-        .limiter
-            .container-login100
-                .wrap-login100
-                    form.login100-form.validate-form
-                        span.login100-form-title.p-b-26
-                            | Sign up
-                        span.login100-form-title.p-b-48
-                            i.zmdi.zmdi-font
-                        .wrap-input100
-                            input.input100(type='text', name='user')
-                            span.focus-input100(data-placeholder='Username')
-                        .wrap-input100.validate-input(data-validate='Valid email is: a@b.c')
-                            input.input100(type='text', name='email')
-                            span.focus-input100(data-placeholder='Email')
-                        .wrap-input100.validate-input(data-validate='Valid email is: a@b.c')
-                            input.input100(type='text', name='con-email')
-                            span.focus-input100(data-placeholder='Confirm Email')
-                        .wrap-input100.validate-input(data-validate='Enter password')
-                            span.btn-show-pass
-                                i.zmdi.zmdi-eye
-                            input.input100(type='password', name='pass')
-                            span.focus-input100(data-placeholder='Password')
-                        .wrap-input100.validate-input(data-validate='Enter password')
-                            span.btn-show-pass
-                                i.zmdi.zmdi-eye
-                            input.input100(type='password', name='con-pass')
-                            span.focus-input100(data-placeholder='Confirm Password')
-                        .container-login100-form-btn
-                            .wrap-login100-form-btn
-                                .login100-form-bgbtn
-                                button.login100-form-btn
-                                    | Sign up
+    .register-photo(style='background-color: #0b0c10;')
+        .form-container
+            .image-holder
+            form(method='post' style='background-color: rgb(30,40,51);')
+                h2.text-center(style='color: rgb(231,231,231);')
+                    strong Create
+                    |  an account.
+                .form-group
+                    input.form-control(type='email' name='email' placeholder='Email' style='background-color: rgba(247,249,252,0);')
+                .form-group
+                    input.form-control(type='password' name='password' placeholder='Password' style='background-color: rgba(255,255,255,0);')
+                .form-group
+                    input.form-control(type='password' name='password-repeat' placeholder='Password (repeat)' style='background-color: rgba(255,255,255,0);')
+                .form-group
+                    .form-check
+                        label.form-check-label
+                            input.form-check-input(type='checkbox')
+                            | I agree to the license terms.
+                .form-group
+                    button.btn.btn-primary.btn-block(type='submit' style='background-color: rgb(33,74,128);') Sign Up
+                a.already(href='#' style='color: rgb(150,152,154);') You already have an account? Login here.

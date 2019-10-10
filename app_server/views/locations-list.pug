@@ -3,27 +3,20 @@ extends layout
 include _includes/sharedHTMLfunctions
 
 block content
-    .row.banner
-        .col-12
-            h1= pageHeader.title
-            small &nbsp;#{pageHeader.strapline}
-    .row
-        .col-12.col-md-8
+    .article-list(style='background-color: #454545;')
+        .container
+            .intro
+                h2.text-center(style='color: rgb(255,255,255);')= pageHeader.title
+                p.text-center(style='color: rgb(255,255,255);')= pageHeader.strapline
+            .row.articles
+                each circuit in circuits
+                    .col-sm-6.col-md-3.item
+                        a(href="/location")
+                            img.img-fluid(src= circuit.facilities)
+                        h3.name(style='color: rgb(255,255,255);')= circuit.circuitName
+                        p.description(style='color: #ffffff;')= circuit.locality
+                        p.description(style='color: #ffffff;')= circuit.country
+                        a.action(href="/location")
+                            i.fa.fa-arrow-circle-right(style='color: #66fcf1;')
 
-        each circuit in circuits
 
-            .col-12.col-md-6.location-map
-                .card.card-primary
-                    .card-block
-                    h4
-                        a(href="/location")= circuit.circuitName
-                        small &nbsp;
-
-                        span.badge.badge-pill.badge-default.float-right= circuit.country
-                    p.address= circuit.locality
-                    .facilities
-                        each facility in circuit.facilities
-                            span.badge.badge-warning= facility
-
-    .col-12.col-md-4
-        p.lead= sidebar
