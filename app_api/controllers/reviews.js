@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-const Loc = mongoose.model('Location');
+const Cir = mongoose.model('top_circuits');
 
 // EXPOSED METHODS
 
 const reviewsCreate = function (req, res) {
   const locationid = req.params.locationid;
   if (locationid) {
-    Loc
+      Cir
       .findById(locationid)
       .select('reviews')
       .exec((err, location) => {
@@ -30,7 +30,7 @@ const reviewsCreate = function (req, res) {
 
 const reviewsReadOne = function (req, res) {
   if (req.params && req.params.locationid && req.params.reviewid) {
-    Loc
+      Cir
       .findById(req.params.locationid)
       .exec((err, location) => {
         if (!location) {
@@ -92,7 +92,7 @@ const reviewsUpdateOne = function (req, res) {
       });
     return;
   }
-  Loc
+    Cir
     .findById(req.params.locationid)
     .select('reviews')
     .exec((err, location) => {
@@ -154,7 +154,7 @@ const reviewsDeleteOne = function (req, res) {
       });
     return;
   }
-  Loc
+    Cir
     .findById(req.params.locationid)
     .select('reviews')
     .exec((err, location) => {
@@ -237,7 +237,7 @@ const _doAddReview = function(req, res, location) {
 };
 
 const _updateAverageRating = function(locationid) {
-  Loc
+    Cir
     .findById(locationid)
     .select('rating reviews')
     .exec((err, location) => {

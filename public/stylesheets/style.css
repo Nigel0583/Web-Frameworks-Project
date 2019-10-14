@@ -12,3 +12,7 @@ html, body {
 .main {
     margin-top: 50px;
 }
+
+img {
+    background: #454545;
+}

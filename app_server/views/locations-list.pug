@@ -3,7 +3,7 @@ extends layout
 include _includes/sharedHTMLfunctions
 
 block content
-    .article-list(style='background-color: #454545;')
+    .article-list(style='background-color: #0b0c10;')
         .container
             .intro
                 h2.text-center(style='color: rgb(255,255,255);')= pageHeader.title
@@ -11,10 +11,15 @@ block content
             .row.articles
                 each circuit in circuits
                     .col-sm-6.col-md-3.item
-                        a(href="/location")
-                            img.img-fluid(src= circuit.facilities)
+                        a(href="/circuit")
+                            img.img-fluid(src= circuit.image)
                         h3.name(style='color: rgb(255,255,255);')= circuit.circuitName
                         p.description(style='color: #ffffff;')= circuit.locality
                         p.description(style='color: #ffffff;')= circuit.country
-                        a.action(href="/location")
+                        p.description(style='color: #ffffff;')= circuit.coords
+                        a.action(href="/circuit")
                             i.fa.fa-arrow-circle-right(style='color: #66fcf1;')
+
+
+
+
