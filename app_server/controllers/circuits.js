@@ -7,28 +7,65 @@ if (process.env.NODE_ENV === 'production') {
 }
 /* GET 'home' page */
 const homelist = (req, res) => {
-    const path = '/api/circuits';
-    const requestOptions = {
-        url: `${apiOptions.server}${path}`,
-        method: 'GET',
-        json: {},
-        qs: {
-            lng: -0.7992599,
-            lat: 51.378091
-        }
-    };
-    request(
-        requestOptions,
-        (err, response, body) => {
-            let data = body;
-            if (response.statusCode === 200 && data.length) {
-                for (let i = 0; i < data.length; i++) {
-                    data[i].distance = _formatDistance(data[i].distance);
-                }
-            }
-            _renderHomepage(req, res, data);
-        }
-    );
+    res.render('locations-list', {
+        title: 'Top 10 Circuits',
+        pageHeader: {
+            title: 'Top 10 Circuits',
+            strapline: 'The top ten Formula one circuits from around the world'
+        },
+        sidebar: "Text here",
+        circuits: [{
+            circuitName: 'Autodromo Nazionale di Monza',
+            locality: 'Monza',
+            image: '../img/1024px-Monza_track_map.png',
+            country: 'Italy'
+        }, {
+            circuitName: 'Circuit De Monaco',
+            locality: 'Monte Carlo',
+            image: '../img/1024px-Monte_Carlo_Formula_1_track_map.png',
+            country: 'Monaco'
+        }, {
+            circuitName: 'Circuit de Spa-Francorchamps',
+            locality: 'Stavelot',
+            image: '../img/1280px-Spa-Francorchamps_of_Belgium.png',
+            country: 'Belgium'
+        },{
+            circuitName: 'Nürburgring',
+            locality: 'Nürburg',
+            image: '../img/Nürburgring_-_Grand-Prix-Strecke.png',
+            country: 'Germany'
+        },{
+            circuitName: 'Circuit Gilles Villeneuve',
+            locality: 'Montreal',
+            image: '../img/1024px-Circuit_Gilles_Villeneuve.png',
+            country: 'Canada'
+        },{
+            circuitName: 'Autódromo José Carlos Pace',
+            locality: 'São Paulo',
+            image: '../img/800px-Circuit_Interlagos.png',
+            country: 'Brazil'
+        },{
+            circuitName: 'Hockenheimring',
+            locality: ' Hockenheim, Baden-Württemberg',
+            image: '../img/1024px-Hockenheim2012.png',
+            country: 'Germany'
+        },{
+            circuitName: 'Suzuka Circuit',
+            locality: 'Suzuka, Mie Prefecture',
+            image: '../img/1024px-Suzuka_circuit_map--2005.png',
+            country: 'Japan'
+        },{
+            circuitName: 'Silverstone Circuit',
+            locality: 'Silverstone, Northamptonshire',
+            image: '../img/Silverstone_Circuit_2011.png',
+            country: 'United Kingdom'
+        },{
+            circuitName: 'Red Bull Ring',
+            locality: ' Spielberg, Styria',
+            image: '../img/1280px-Circuit_Red_Bull_Ring.png',
+            country: 'Austria'
+        }]
+    });
 };
 
 
