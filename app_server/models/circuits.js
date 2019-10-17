@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
 const topCircuitSchema = new mongoose.Schema({
-    circuitName: String,
-    locality: String,
-    image: String,
-    country: String,
-    coords: {type: [[Number]], index: '2dsphere'}
+  circuitName: String,
+  locality: String,
+  image: String,
+  country: String
 });
 
 mongoose.model('TopCircuits', topCircuitSchema);

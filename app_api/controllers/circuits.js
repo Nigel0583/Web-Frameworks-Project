@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Cir = mongoose.model('top_circuits');
+const Cir = mongoose.model('TopCircuits');
 
 const _buildLocationList = function (req, res, results, stats) {
     let locations = [];

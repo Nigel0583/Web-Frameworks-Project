@@ -41,4 +41,4 @@ process.on('SIGTERM', () => {
     });
 });
 
-require('./locations');
+require('./circuits');
