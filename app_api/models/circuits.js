@@ -1,11 +1,27 @@
 const mongoose = require('mongoose');
 
+const reviewSchema = new mongoose.Schema({
+    author: String,
+    rating: {
+        type: Number,
+        required: true,
+        min: 0,
+        max: 5
+    },
+    reviewText: String,
+    createdOn: {
+        type: Date,
+        'default': Date.now
+    }
+});
+
 const topCircuitSchema = new mongoose.Schema({
-    circuitName: String,
+    circuitName: {type: String, required: true},
     locality: String,
     image: String,
     country: String,
-    coords: {type: [Number], index: '2dsphere'}
+    coords: {type: [Number], index: '2dsphere'},
+    reviews: [reviewSchema]
 });
 
 mongoose.model('top_circuits', topCircuitSchema);
