@@ -5,7 +5,7 @@ const topCircuitSchema = new mongoose.Schema({
     locality: String,
     image: String,
     country: String,
-    coords: {type: [[Number]], index: '2dsphere'}
+    coords: {type: [Number], index: '2dsphere'}
 });
 
-mongoose.model('TopCircuits', topCircuitSchema);
+mongoose.model('top_circuits', topCircuitSchema);

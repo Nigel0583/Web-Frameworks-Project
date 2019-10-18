@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Cir = mongoose.model('TopCircuits');
+const Cir = mongoose.model('top_circuits');
 
 // EXPOSED METHODS
 
