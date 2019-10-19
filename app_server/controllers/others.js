@@ -2,21 +2,32 @@
 const about = function(req, res){
   res.render('generic-text', {
     title: 'About Loc8r',
-    content: 'Loc8r was created to help people find places to sit down and get a bit of work done.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed lorem ac nisi dignissim accumsan. Nullam sit amet interdum magna. Morbi quis faucibus nisi. Vestibulum mollis purus quis eros adipiscing tristique. Proin posuere semper tellus, id placerat augue dapibus ornare. Aenean leo metus, tempus in nisl eget, accumsan interdum dui. Pellentesque sollicitudin volutpat ullamcorper.\n\nSuspendisse tincidunt, lectus non suscipit pharetra, purus ipsum vehicula sapien, a volutpat mauris ligula vel dui. Proin varius interdum elit, eu porttitor quam consequat et. Quisque vitae felis sed ante fringilla fermentum in vitae sem. Quisque fermentum metus at neque sagittis imperdiet. Phasellus non laoreet massa, eu laoreet nibh. Pellentesque vel magna vulputate, porta augue vel, dapibus nisl. Phasellus aliquet nibh nec nunc posuere fringilla. Quisque sit amet dignissim erat. Nulla facilisi. Donec in sollicitudin ante. Cras rhoncus accumsan rutrum. Sed aliquet ligula dui, eget laoreet turpis tempor vitae.'
+    content: 'This website was be created to give detailed information about Formula 1 circuits. It will allow user to create accounts',
+    content1: 'Formula One (also known as Formula 1 or F1) is the highest class of single-seater auto racing sanctioned by the Fédération Internationale de l\'Automobile (FIA) and owned by the Formula One Group',
+    info: 'This website was created for Formula One fans for Formula One fans. Learn about Formula One circuits. Read and write reviews about your favourite and least favourite tracks.'
   });
 };
 
 const login = function(req, res){
   res.render('login-page', {
     title: 'Login',
-
+    forgot:'Forgot your email or password?',
+    logbtn: 'Log In',
+    logh2:"Login Form",
+    email: 'Email',
+    pass: 'Password'
   });
 };
 
 const register = function(req, res){
   res.render('register-page', {
     title: 'Register',
-
+    pageHead: 'Create an account.',
+    signUp: 'Sign Up',
+    already:'You already have an account? Login here.',
+    regem: 'Email',
+    paswd: "Password",
+    passrep: 'Password (repeat)'
   });
 };
 

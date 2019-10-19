@@ -3,7 +3,7 @@ const router = express.Router();
 const ctrlLocations = require('../controllers/circuits');
 const ctrlReviews = require('../controllers/reviews');
 
-// locations
+// Circuits
 router
   .route('/circuits')
   .get(ctrlLocations.locationsListByDistance)

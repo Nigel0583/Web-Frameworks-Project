@@ -4,23 +4,18 @@ block content
   .features-clean(style='background-color: #0b0c10;')
     .container
       .intro
-        h2.text-center(style='color: rgb(255,255,255);') Features
-        p.text-center(style='color: rgb(255,255,255);')
-          | Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.
+        h2.text-center(style='color: rgb(255,255,255);') Information
+        p.text-center(style='color: rgb(255,255,255);')= info
       .row.features
-        .col-sm-6.col-lg-4.item
-          i.fa.fa-map-marker.icon
-          h3.name(style='color: rgb(255,255,255);') Works everywhere
+        .col-sm-7.col-lg-6.item
+          i.fa.fa-code.icon
+          h3.name(style='color: rgb(255,255,255);') About Us
           p.description(style='color: rgb(255,255,255);')
            p !{(content).replace(/\n/g, '<br/>')}.
-        .col-sm-6.col-lg-4.item
-          i.fa.fa-clock-o.icon
-          h3.name(style='color: rgb(255,255,255);') Always available
+        .col-sm-7.col-lg-6.item
+          i.fa.fa-globe.icon
+          h3.name(style='color: rgb(255,255,255);') About F1
           p.description(style='color: rgb(255,255,255);')
-            p !{(content).replace(/\n/g, '<br/>')}
-        .col-sm-6.col-lg-4.item
-          i.fa.fa-list-alt.icon
-          h3.name(style='color: rgb(255,255,255);') Customizable
-          p.description(style='color: rgb(255,255,255);')
-            p !{(content).replace(/\n/g, '<br/>')}
+            p !{(content1).replace(/\n/g, '<br/>')}
+
 

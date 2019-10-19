@@ -3,15 +3,15 @@ extends layout
 block content
     .login-dark
         form(method='post')
-            h2.sr-only Login Form
+            h2.sr-only= logh2
             .illustration
                 i.icon.ion-ios-locked-outline
             .form-group
-                input.form-control(type='email', name='email', placeholder='Email')
+                input.form-control(type='email', name='email', placeholder=email)
             .form-group
-                input.form-control(type='password', name='password', placeholder='Password')
+                input.form-control(type='password', name='password', placeholder=pass)
             .form-group
-                button.btn.btn-primary.btn-block(type='submit') Log In
-            a.forgot(href='#') Forgot your email or password?
+                button.btn.btn-primary.btn-block(type='submit')= logbtn
+            a.forgot(href='#')= forgot
 
 

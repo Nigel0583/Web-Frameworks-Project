@@ -6,19 +6,18 @@ block content
             .image-holder
             form(method='post' style='background-color: rgb(30,40,51);')
                 h2.text-center(style='color: rgb(231,231,231);')
-                    strong Create
-                    |  an account.
+                    strong= pageHead
                 .form-group
-                    input.form-control(type='email' name='email' placeholder='Email' style='background-color: rgba(247,249,252,0);')
+                    input.form-control(type='email' name='email' placeholder=regem style='background-color: rgba(247,249,252,0);')
                 .form-group
-                    input.form-control(type='password' name='password' placeholder='Password' style='background-color: rgba(255,255,255,0);')
+                    input.form-control(type='password' name='password' placeholder=paswd style='background-color: rgba(255,255,255,0);')
                 .form-group
-                    input.form-control(type='password' name='password-repeat' placeholder='Password (repeat)' style='background-color: rgba(255,255,255,0);')
+                    input.form-control(type='password' name='password-repeat' placeholder=passrep style='background-color: rgba(255,255,255,0);')
                 .form-group
                     .form-check
                         label.form-check-label
                             input.form-check-input(type='checkbox')
                             | I agree to the license terms.
                 .form-group
-                    button.btn.btn-primary.btn-block(type='submit' style='background-color: rgb(33,74,128);') Sign Up
-                a.already(href='#' style='color: rgb(150,152,154);') You already have an account? Login here.
+                    button.btn.btn-primary.btn-block(type='submit' style='background-color: rgb(33,74,128);')= signUp
+                a.already(href='#' style='color: rgb(150,152,154);')= already
