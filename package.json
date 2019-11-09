@@ -6,31 +6,15 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "add": "^2.0.6",
-    "body-parser": "^1.19.0",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "^4.17.1",
-    "fibers": "^4.0.1",
-    "jade-bootstrap": "^1.0.14",
-    "jquery": "^3.4.1",
-    "mongoose": "^5.7.5",
-    "morgan": "~1.9.1",
-    "nodemon": "^1.19.3",
-    "or": "^0.2.0",
-    "owl.carousel": "^2.3.4",
-    "pug": "^2.0.4",
-    "pug-beautify": "^0.1.1",
-    "readline": "^1.3.0",
-    "request": "^2.88.0",
-    "serve-favicon": "^2.5.0",
-    "yarn": "^1.19.1"
-  },
-  "devDependencies": {
-    "node-sass": "^4.12.0",
-    "sass": "^1.23.0",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.41.1"
+   "body-parser": "^1.19.0",
+	"cookie-parser": "~1.4.3",
+	"debug": "~2.2.0",
+	"express": "^4.17.1",
+	"morgan": "^1.9.1",
+	"nodemon": "^1.19.4",
+	"pug": "~2.0.0-beta6",
+	"request": "^2.88.0",
+	"serve-favicon": "^2.5.0",
+    "jquery": "^3.4.1"
   }
 }
