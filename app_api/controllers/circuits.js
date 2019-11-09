@@ -2,75 +2,57 @@ const mongoose = require('mongoose');
 const Cir = mongoose.model('top_circuits');
 
 const _buildLocationList = function (req, res, results, stats) {
-    let locations = [];
+    let circuits = [];
     results.forEach((doc) => {
-        locations.push({
+        circuits.push({
             distance: doc.dis,
             circuitName: doc.obj.circuitName,
             locality: doc.obj.locality,
+            imagePath: doc.obj.imagePath,
             country: doc.obj.country,
             coords: doc.obj.coords,
             _id: doc.obj._id
         });
     });
-    return locations;
+    return circuits;
 };
-const locationsListByDistance = async (req, res) => {
+const locationsListByDistance = function (req, res) {
     const lng = parseFloat(req.query.lng);
     const lat = parseFloat(req.query.lat);
-    const near = {
+    const maxDistance = parseFloat(req.query.maxDistance);
+    const point = {
         type: "Point",
         coordinates: [lng, lat]
     };
     const geoOptions = {
-        distanceField: "distance.calculated",
-        key: 'coords',
         spherical: true,
         maxDistance: 20000,
-        limit: 10
+        num: 10
     };
-    if (!lng || !lat) {
-        return res
+    if (!lng || !lat || !maxDistance) {
+        console.log('locationsListByDistance missing params');
+        res
             .status(404)
             .json({
-                "message": "lng and lat query parameters are required"
+                message : 'lng, lat and maxDistance query parameters are all required'
             });
+        return;
     }
-
-    try {
-        const results = await Cir.aggregate([
-            {
-                $geoNear: {
-                    near
-                }
-            }
-        ]);
-        const locations = results.map(result => {
-            return {
-                id: result._id,
-                circuitName: result.circuitName,
-                locality: result.locality,
-                country: result.country,
-                coords: result.coords,
-                distance: '${result.distance.calculated.toFixed()}m'
-            }
-        });
-
+    Cir.geoNear(point, geoOptions, (err, results, stats) => {
+        const locations = _buildLocationList(req, res, results, stats);
+        console.log('Geo Results', results);
+        console.log('Geo stats', stats);
         res
             .status(200)
             .json(locations);
-    } catch (err) {
-        res
-            .status(404)
-            .json(err);
-    }
+    });
 };
 
 const locationsCreate = function (req, res) {
     Cir.create({
         circuitName: req.body.circuitName,
         locality: req.body.locality,
-        image: req.body.image,
+        imagePath: req.body.imagePath,
         country: req.body.country,
         coords: req.body.coords
     }, (err, location) => {
@@ -143,9 +125,12 @@ const locationsUpdateOne = function (req, res) {
                 }
                 location.circuitName = req.body.circuitName;
                 location.locality = req.body.locality;
-                location.image = req.body.image;
+                location.imagePath = req.body.imagePath;
                 location.country = req.body.country;
-                location.coords = req.body.coords;
+                location.coords = [
+                    parseFloat(req.body.lng),
+                    parseFloat(req.body.lat)
+                ];
                 location.save((err, location) => {
                     if (err) {
                         res

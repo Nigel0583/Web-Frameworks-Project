@@ -18,7 +18,7 @@ const reviewSchema = new mongoose.Schema({
 const topCircuitSchema = new mongoose.Schema({
     circuitName: {type: String, required: true},
     locality: String,
-    image: String,
+    imagePath: String,
     country: String,
     coords: {type: [Number], index: '2dsphere'},
     reviews: [reviewSchema]
