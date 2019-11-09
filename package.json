@@ -14,7 +14,7 @@
     "fibers": "^4.0.1",
     "jade-bootstrap": "^1.0.14",
     "jquery": "^3.4.1",
-    "mongoose": "^4.9.1",
+    "mongoose": "^5.7.5",
     "morgan": "~1.9.1",
     "nodemon": "^1.19.3",
     "or": "^0.2.0",
