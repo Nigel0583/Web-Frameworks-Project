@@ -9,12 +9,13 @@ const _buildLocationList = function (req, res, results, stats) {
             circuitName: doc.obj.circuitName,
             locality: doc.obj.locality,
             imagePath: doc.obj.imagePath,
+            rating: doc.obj.rating,
             country: doc.obj.country,
-            coords: doc.obj.coords,
             _id: doc.obj._id
         });
     });
     return circuits;
+
 };
 const locationsListByDistance = function (req, res) {
     const lng = parseFloat(req.query.lng);
@@ -26,8 +27,8 @@ const locationsListByDistance = function (req, res) {
     };
     const geoOptions = {
         spherical: true,
-        maxDistance: 20000,
-        num: 10
+        maxDistance: 10000000000000000,
+        num: 11
     };
     if (!lng || !lat || !maxDistance) {
         console.log('locationsListByDistance missing params');
@@ -54,7 +55,7 @@ const locationsCreate = function (req, res) {
         locality: req.body.locality,
         imagePath: req.body.imagePath,
         country: req.body.country,
-        coords: req.body.coords
+        coords: [parseFloat(req.body.lng), parseFloat(req.body.lat)],
     }, (err, location) => {
         if (err) {
             res

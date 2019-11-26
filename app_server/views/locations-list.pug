@@ -12,11 +12,10 @@ block content
                 .error= message
                 each circuit in circuits
                     .col-sm-6.col-md-3.item
-                        a(href="/circuit/${location._id}")
+                        a(href=`/circuit/${circuit._id}`)
                             img.img-fluid(src= circuit.imagePath)
                         h3.name(style='color: rgb(255,255,255);')= circuit.circuitName
                         p.description(style='color: #ffffff;')= circuit.locality
                         p.description(style='color: #ffffff;')= circuit.country
-                        p.description(style='color: #ffffff;')= circuit.coords
-                        a.action(href="/circuit/${location._id}")
+                        a.action(href=`/circuit/${circuit._id}`)
                             i.fa.fa-arrow-circle-right(style='color: #66fcf1;')
