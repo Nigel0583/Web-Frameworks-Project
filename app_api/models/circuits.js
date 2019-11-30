@@ -29,4 +29,4 @@ const topCircuitSchema = new mongoose.Schema({
     reviews: [reviewSchema]
 });
 
-mongoose.model('top_circuits', topCircuitSchema,);
+mongoose.model('top_circuits', topCircuitSchema);
