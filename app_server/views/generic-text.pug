@@ -1,21 +1,9 @@
 extends layout
 
 block content
-  .features-clean(style='background-color: #0b0c10;')
-    .container
-      .intro
-        h2.text-center(style='color: rgb(255,255,255);') Information
-        p.text-center(style='color: rgb(255,255,255);')= info
-      .row.features
-        .col-sm-7.col-lg-6.item
-          i.fa.fa-code.icon
-          h3.name(style='color: rgb(255,255,255);') About Us
-          p.description(style='color: rgb(255,255,255);')
-           p !{(content).replace(/\n/g, '<br/>')}.
-        .col-sm-7.col-lg-6.item
-          i.fa.fa-globe.icon
-          h3.name(style='color: rgb(255,255,255);') About F1
-          p.description(style='color: rgb(255,255,255);')
-            p !{(content1).replace(/\n/g, '<br/>')}
-
+    app-about-page Loading
+    block scripts
+        script(src='/build/runtime-es5.edb2fcf2778e7bf1d426.js')
+        script(src='/build/polyfills-es5.ef4b1e1fc703b3ff76e3.js')
+        script(src='/build/main-es5.44cb77da766eeeb7a0f4.js')
 

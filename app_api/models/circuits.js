@@ -23,8 +23,10 @@ const topCircuitSchema = new mongoose.Schema({
     locality: String,
     imagePath: String,
     country: String,
+    text: String,
+    source: String,
     coords: {type: [Number], index: '2dsphere'},
     reviews: [reviewSchema]
 });
 
-mongoose.model('top_circuits', topCircuitSchema);
+mongoose.model('top_circuits', topCircuitSchema,);

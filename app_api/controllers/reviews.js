@@ -209,32 +209,34 @@ const reviewsDeleteOne = function (req, res) {
 // PRIVATE HELPER METHODS
 
 const _doAddReview = function(req, res, location) {
-  if (!location) {
-    res
-        .status(404)
-        .json({
-          "message": "locationid not found"
+    if (!location) {
+        res
+            .status(404)
+            .json({
+                "message": "locationid not found"
+            });
+    } else {
+        const locationArray = location.reviews.concat({
+            author: req.body.author,
+            rating: req.body.rating,
+            reviewText: req.body.reviewText
         });
-  } else {
-    location.reviews.push({
-      author: req.body.author,
-      rating: req.body.rating,
-      reviewText: req.body.reviewText
-    });
-    location.save((err, location) => {
-      if (err) {
-        res
-            .status(400)
-            .json(err);
-      } else {
-        _updateAverageRating(location._id);
-        let thisReview = location.reviews[location.reviews.length - 1];
-        res
-            .status(201)
-            .json(thisReview);
-      }
-    });
-  }
+        location.reviews=locationArray;
+        location.save((err, location) => {
+            if (err) {
+                console.log(err);
+                res
+                    .status(400)
+                    .json(err);
+            } else {
+                _updateAverageRating(location._id);
+                let thisReview = location.reviews[location.reviews.length - 1];
+                res
+                    .status(201)
+                    .json(thisReview);
+            }
+        });
+    }
 };
 
 

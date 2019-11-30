@@ -11,11 +11,12 @@ const _buildLocationList = function (req, res, results, stats) {
             imagePath: doc.obj.imagePath,
             rating: doc.obj.rating,
             country: doc.obj.country,
+            text: doc.obj.text,
+            source: doc.obj.source,
             _id: doc.obj._id
         });
     });
     return circuits;
-
 };
 const locationsListByDistance = function (req, res) {
     const lng = parseFloat(req.query.lng);
@@ -55,6 +56,8 @@ const locationsCreate = function (req, res) {
         locality: req.body.locality,
         imagePath: req.body.imagePath,
         country: req.body.country,
+        text: req.body.text,
+        source: req.body.source,
         coords: [parseFloat(req.body.lng), parseFloat(req.body.lat)],
     }, (err, location) => {
         if (err) {
@@ -128,6 +131,8 @@ const locationsUpdateOne = function (req, res) {
                 location.locality = req.body.locality;
                 location.imagePath = req.body.imagePath;
                 location.country = req.body.country;
+                location.text = req.body.text;
+                location.source = req.body.source;
                 location.coords = [
                     parseFloat(req.body.lng),
                     parseFloat(req.body.lat)

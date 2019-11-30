@@ -15,8 +15,8 @@ const homelist = function (req, res) {
         method: 'GET',
         json: {},
         qs: {
-            lng: 5.969496122,
-            lat: 50.435664924 ,
+            lng: -9.673084,
+            lat: 52.286301,
             maxDistance: 10000000000000000
         }
     };
@@ -54,7 +54,7 @@ const doAddReview = function(req, res) {
     const postdata = {
         author: req.body.name,
         rating: parseInt(req.body.rating, 10),
-        reviewText: req.body.reviews
+        reviewText: req.body.review
     };
     const requestOptions = {
         url : apiOptions.server + path,
@@ -62,7 +62,7 @@ const doAddReview = function(req, res) {
         json : postdata
     };
     if (!postdata.author || !postdata.rating || !postdata.reviewText) {
-        res.redirect(`/circuit/${locationid}/review/new?err=val`);
+        res.redirect(`/circuits/${locationid}/review/new?err=val`);
     } else {
         request(
             requestOptions,
@@ -137,8 +137,8 @@ const _renderDetailPage = function(req, res, locDetail) {
 
 const _renderReviewForm = function(req, res, locDetail) {
     res.render('location-review-form', {
-        title: `Review ${locDetail.name} on Loc8r`,
-        pageHeader: { title: `Review ${locDetail.name}`  },
+        title: `Review ${locDetail.circuitName}`,
+        pageHeader: { title: `Review ${locDetail.circuitName}`  },
         error: req.query.err
     });
 };
