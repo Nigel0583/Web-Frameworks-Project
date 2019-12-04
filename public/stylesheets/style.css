@@ -19,6 +19,10 @@ html, body {
 .top_2 {
     margin-top: 50px;
 }
+
+.cen{
+    text-align: center;
+}
 img {
     background: #454545;
 }
