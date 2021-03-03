@@ -24,7 +24,7 @@
     "nodemon": "^1.19.3",
     "or": "^0.2.0",
     "owl.carousel": "^2.3.4",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-beautify": "^0.1.1",
     "readline": "^1.3.0",
     "request": "^2.88.0",
